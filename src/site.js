@@ -86,10 +86,11 @@ export function jsonLd(lang) {
   }).replaceAll('<', '\\u003c');
 }
 
+const credit = (c) =>
+  `<a href="${c.page}">${c.title}</a>, ${(c.creator ?? '').replace(/\(\s*/g, '(').replace(/\s*\)/g, ')')} (<a href="${c.licenseUrl}">${c.license}</a>)`;
+
 // Footer credit line: every open-licence photograph the page shows
-export const creditsHtml = credits
-  .map(
-    (c) =>
-      `<a href="${c.page}">${c.title}</a>, ${(c.creator ?? '').replace(/\(\s*/g, '(').replace(/\s*\)/g, ')')} (<a href="${c.licenseUrl}">${c.license}</a>)`
-  )
-  .join('; ');
+export const creditsHtml = credits.map(credit).join('; ');
+
+// The credit for one photograph, by its source file in assets/credits.json
+export const creditHtmlFor = (file) => credit(credits.find((c) => c.file === file));

@@ -208,7 +208,7 @@ Large headline-step names as buttons, graphite until active, ink when active or 
 A centred 520px column on pale granite: a small square portrait (44px; 40px on phones), body paragraphs, and an italic lead-step signature "Miriam Rivero" with the role in graphite at the label step.
 
 ### Visit card
-Paper plane, ink text, square, 420px wide with 32px padding, pinned over a full-height photograph. Title-step heading, a short location line, label/value rows (labels graphite, values right-aligned, tabular figures), and a full-bleed amber button closing the card.
+Paper plane, ink text, square, 420px wide with 32px padding, pinned over a full-height photograph. Title-step heading, a short location line, label/value rows (labels graphite, values right-aligned, tabular figures), and a full-bleed amber button closing the card. Under the email sits a quiet "Copiar email" text button (label step, graphite, underlined) for desktops without a mail app; it swaps to "Copiado" with a 180ms fade and 2px blur, or selects the address when the clipboard is refused.
 
 ### Navigation
 - **Top bar:** label step, channels on the left, three in-page links and the small button on the right (links hidden at 1100px and below). Links have no underline at rest and underline on hover.

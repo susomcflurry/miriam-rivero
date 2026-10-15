@@ -3,8 +3,7 @@
 import { useEffect, useRef, useState } from 'react';
 import { flushSync } from 'react-dom';
 import { languages, shared } from '../content.js';
-
-const img = (path) => `/${path}`;
+import { picture, SIZES } from '../images.js';
 
 const PairArrow = () => (
   <>
@@ -19,9 +18,9 @@ const PairArrow = () => (
 );
 
 const WORK = [
-  { id: '1', src: 'assets/img/work-fisu.webp', w: 1040, h: 1300 },
-  { id: '2', src: 'assets/img/work-madrid.webp', w: 799, h: 1000 },
-  { id: '3', src: 'assets/img/work-koln.webp', w: 1040, h: 1300 },
+  { id: '1', src: 'assets/img/work-fisu.webp' },
+  { id: '2', src: 'assets/img/work-madrid.webp' },
+  { id: '3', src: 'assets/img/work-koln.webp' },
 ];
 
 const SERVICES = [
@@ -35,6 +34,11 @@ export default function Site({ initialLang, creditsHtml }) {
   const [stage, setStage] = useState('1');
   const [work, setWork] = useState('1');
   const [dock, setDock] = useState(false);
+  // The second river is only fetched once the visitor starts scrolling, so it never competes with the first
+  const [stage2Wanted, setStage2Wanted] = useState(false);
+  const [canCopy, setCanCopy] = useState(false);
+  const [copied, setCopied] = useState(false);
+  const copiedTimer = useRef(0);
   const root = useRef(null);
   const copy = languages[lang];
 
@@ -72,6 +76,7 @@ export default function Site({ initialLang, creditsHtml }) {
     const update = () => {
       queued = false;
       setStage(trigger.getBoundingClientRect().top < innerHeight * 0.55 ? '2' : '1');
+      if (scrollY > 0) setStage2Wanted(true);
       const reached = services.getBoundingClientRect().top < innerHeight * 0.6;
       const atContact = contact.getBoundingClientRect().top < innerHeight;
       setDock(reached && !atContact);
@@ -86,6 +91,25 @@ export default function Site({ initialLang, creditsHtml }) {
     update();
     return () => removeEventListener('scroll', onScroll);
   }, []);
+
+  /* Copy the address: for desktops where mailto opens nothing */
+  useEffect(() => {
+    setCanCopy(Boolean(navigator.clipboard?.writeText));
+    return () => clearTimeout(copiedTimer.current);
+  }, []);
+
+  const copyEmail = async () => {
+    try {
+      await navigator.clipboard.writeText(shared.email);
+    } catch {
+      // Clipboard refused: select the address so it can still be copied by hand
+      getSelection().selectAllChildren(root.current.querySelector('.card__rows a[href^="mailto:"]'));
+      return;
+    }
+    setCopied(true);
+    clearTimeout(copiedTimer.current);
+    copiedTimer.current = setTimeout(() => setCopied(false), 2400);
+  };
 
   /* Back and forward follow the URL's language */
   useEffect(() => {
@@ -142,20 +166,20 @@ export default function Site({ initialLang, creditsHtml }) {
           <div className="stage__frame">
             <img
               className={`stage__img${stage === '1' ? ' is-on' : ''}`}
-              src={img(copy.stage1)}
-              width="1120"
-              height="1400"
+              {...picture(copy.stage1)}
+              sizes={SIZES.stage}
               alt=""
               fetchPriority="high"
             />
-            <img
-              className={`stage__img${stage === '2' ? ' is-on' : ''}`}
-              src={img(copy.stage2)}
-              width="1120"
-              height="1400"
-              alt=""
-              loading="lazy"
-            />
+            {stage2Wanted && (
+              <img
+                className={`stage__img${stage === '2' ? ' is-on' : ''}`}
+                {...picture(copy.stage2)}
+                sizes={SIZES.stage}
+                alt=""
+                decoding="async"
+              />
+            )}
           </div>
           <figcaption className="stage__caption">
             <span className={stage === '1' ? 'is-on' : undefined} data-t>
@@ -169,7 +193,7 @@ export default function Site({ initialLang, creditsHtml }) {
 
         <div className="column">
           <header className="hero" id="top">
-            <nav className="bar" aria-label="Menu">
+            <nav className="bar" aria-label={copy.navLabel}>
               <div className="channels" role="group" aria-label={copy.channelsLabel}>
                 {Object.entries(languages).map(([l, c]) => (
                   <a
@@ -239,7 +263,7 @@ export default function Site({ initialLang, creditsHtml }) {
             </section>
 
             <figure className="plate" aria-hidden="true">
-              <img src={img(copy.plate)} width="1400" height="1050" alt="" loading="lazy" />
+              <img {...picture(copy.plate)} sizes={SIZES.plate} alt="" loading="lazy" />
             </figure>
 
             <section className="pairs" aria-labelledby="pairs-title">
@@ -276,7 +300,7 @@ export default function Site({ initialLang, creditsHtml }) {
                 {copy[`svc${n}Title`]}
               </h3>
               <div className="svc__row">
-                <img className="svc__img" src={img(src)} width="675" height="900" alt={copy[`svc${n}Alt`]} loading="lazy" />
+                <img className="svc__img" {...picture(src)} sizes={SIZES.svc} alt={copy[`svc${n}Alt`]} loading="lazy" />
                 <ul className="svc__list" data-t>
                   {copy[`svc${n}List`].map((item) => (
                     <li key={item}>{item}</li>
@@ -294,13 +318,12 @@ export default function Site({ initialLang, creditsHtml }) {
         </h2>
         <div className="work__grid">
           <ol className="work__list" data-reveal-group>
-            {WORK.map(({ id, src, w, h }) => (
+            {WORK.map(({ id, src }) => (
               <li key={id} className={`work__item${work === id ? ' is-active' : ''}`}>
-                <img className="work__thumb" src={img(src)} width={w} height={h} alt={copy[`work${id}Alt`]} loading="lazy" />
+                <img className="work__thumb" {...picture(src)} sizes={SIZES.workThumb} alt={copy[`work${id}Alt`]} loading="lazy" />
                 <button
                   type="button"
                   className="work__name"
-                  aria-pressed={work === id}
                   onPointerEnter={() => setWork(id)}
                   onFocus={() => setWork(id)}
                   onClick={() => setWork(id)}
@@ -314,8 +337,8 @@ export default function Site({ initialLang, creditsHtml }) {
             ))}
           </ol>
           <div className="work__frame" aria-hidden="true">
-            {WORK.map(({ id, src, w, h }) => (
-              <img key={id} className={work === id ? 'is-on' : undefined} src={img(src)} width={w} height={h} alt="" loading="lazy" />
+            {WORK.map(({ id, src }) => (
+              <img key={id} className={work === id ? 'is-on' : undefined} {...picture(src)} sizes={SIZES.workFrame} alt="" loading="lazy" />
             ))}
           </div>
         </div>
@@ -323,7 +346,13 @@ export default function Site({ initialLang, creditsHtml }) {
 
       <section className="about" id="about" aria-label={copy.navAbout}>
         <div className="letter" data-reveal-group>
-          <img className="letter__portrait" src={img('assets/img/miriam.webp')} width="480" height="600" alt={copy.portraitAlt} />
+          <img
+            className="letter__portrait"
+            {...picture('assets/img/miriam.webp')}
+            sizes={SIZES.portrait}
+            alt={copy.portraitAlt}
+            loading="lazy"
+          />
           <p data-t>{copy.about1}</p>
           <p data-t>{copy.about2}</p>
           <p data-t>{copy.about3}</p>
@@ -334,7 +363,13 @@ export default function Site({ initialLang, creditsHtml }) {
       </section>
 
       <section className="contact" id="contact" aria-labelledby="contact-title">
-        <img className="contact__img" src={img('assets/img/contact.webp')} width="1920" height="1440" alt={copy.contactAlt} loading="lazy" />
+        <img
+          className="contact__img"
+          {...picture('assets/img/contact.webp')}
+          sizes={SIZES.contact}
+          alt={copy.contactAlt}
+          loading="lazy"
+        />
         <div className="card" data-reveal>
           <h2 className="card__title" id="contact-title" data-t>
             {copy.contactTitle}
@@ -345,6 +380,19 @@ export default function Site({ initialLang, creditsHtml }) {
               <dt data-t>{copy.contactEmail}</dt>
               <dd>
                 <a href={`mailto:${shared.email}`}>{shared.email}</a>
+                {canCopy && (
+                  <button type="button" className={`copy${copied ? ' is-copied' : ''}`} onClick={copyEmail}>
+                    <span className="copy__idle" data-t aria-hidden={copied}>
+                      {copy.contactCopy}
+                    </span>
+                    <span className="copy__done" data-t aria-hidden={!copied}>
+                      {copy.contactCopied}
+                    </span>
+                  </button>
+                )}
+                <span className="sr-only" role="status">
+                  {copied ? copy.contactCopied : ''}
+                </span>
               </dd>
             </div>
             <div>
@@ -367,7 +415,13 @@ export default function Site({ initialLang, creditsHtml }) {
       </section>
 
       <footer className="footer">
-        <img className="footer__img" src={img('assets/img/footer.webp')} width="1200" height="982" alt={copy.footerAlt} loading="lazy" />
+        <img
+          className="footer__img"
+          {...picture('assets/img/footer.webp')}
+          sizes={SIZES.footer}
+          alt={copy.footerAlt}
+          loading="lazy"
+        />
         <div className="footer__side">
           <p className="footer__mark">Miriam Rivero</p>
           <ul className="footer__menu">

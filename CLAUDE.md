@@ -35,11 +35,15 @@ There are no tests.
   - otherwise `x-vercel-ip-country` DE goes to `/de/`, any country other than ES or DE goes to `/en/`, and Spain stays on `/`;
   - crawler user-agents are never redirected, so Google indexes all three versions.
   This only runs on Vercel; the Docker/nginx build always serves `/` in Spanish.
+- **404**: `app/global-not-found.jsx` (with `experimental.globalNotFound`) is one trilingual page for the three root layouts; it exports to `out/404.html`.
+- **Headers**: `vercel.json` also sets security headers on every path and a 30-day cache on `/assets/*`. Image file names are not hashed, so a replaced crop can stay cached for up to 30 days: give it a new name instead.
 - **URLs**: `trailingSlash: true` gives `/en/` and `/de/`. `shared.siteUrl` is `https://miriamrivero.com/`; `www.miriamrivero.com` 308-redirects to it in Vercel.
 
 ## Images and credits
 
 - `public/assets/img/*.webp` are the crops the page uses, and `assets/originals/` holds the downloaded sources.
+- Every crop also ships smaller `name-<width>.webp` variants for `srcset`. `src/images.js` lists the widths and the `sizes` of each slot, and `picture(path)` returns the `<img>` props. After replacing or adding a crop, run `node scripts/resize-images.mjs` (needs `cwebp`).
+- The second stage photo is only mounted after the first scroll, and the arrival is a night curtain lifting off the photo (not a clip-path on it), so the first photo paints at once for LCP.
 - `assets/credits.json` records the source and licence of each photograph and feeds the footer credit line. Several photos are CC BY-SA, so their crops stay under the same licence.
 - `public/og-image.jpg` (1200×630) is a static render.
 - The portrait `public/assets/img/miriam.webp` (480×600) is a retouched upscale of a 289px LinkedIn avatar. Replace it when a real photo is available.

@@ -11,6 +11,15 @@
         ],
         "createdAt": "2026-10-15T15:21:24.261Z",
         "reason": "Claude: false positive, template has placeholders only; inspect.mjs measured rendered sizes 14/20/24/56/118px (display:body 5.9x)"
+      },
+      {
+        "rule": "broken-image",
+        "value": "*",
+        "files": [
+          "src/components/Site.jsx"
+        ],
+        "createdAt": "2026-10-15T18:51:44.092Z",
+        "reason": "Claude: src comes from {...picture(path)} spread (src/images.js); static scan can't see it. Verified rendered in build screenshots."
       }
     ]
   }
