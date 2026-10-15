@@ -249,7 +249,7 @@ button, .button, .channels a { user-select: none; -webkit-user-select: none; }
 }
 .letter { max-width: 520px; margin: 0 auto; display: grid; gap: 1.1em; }
 .letter__portrait {
-  width: 200px; aspect-ratio: 4 / 5; height: auto; object-fit: cover;
+  width: 122px; aspect-ratio: 4 / 5; height: auto; object-fit: cover;
   margin-bottom: 20px;
 }
 .letter__sign {
@@ -480,7 +480,7 @@ button, .button, .channels a { user-select: none; -webkit-user-select: none; }
   .work__frame { display: none; }
 
   .about { padding: 96px 24px; }
-  .letter__portrait { width: 168px; }
+  .letter__portrait { width: 128px; }
 
   .contact { min-height: 0; background: var(--stone-2); padding-bottom: 16px; }
   .contact__img { position: static; height: 70svh; }
