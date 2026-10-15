@@ -9,7 +9,9 @@ export const languages = {
   es: {
     path: '',
     root: './',
-    title: 'Miriam Rivero · Intérprete de conferencias y traductora · Alemán, inglés y español',
+    title: 'Miriam Rivero · Intérprete de conferencias y traductora',
+    jobTitle: 'Intérprete de conferencias y traductora',
+    ogLocale: 'es_ES',
     description:
       'Intérprete de conferencias y traductora con alemán como lengua materna, en Madrid. Interpretación simultánea, consecutiva y de enlace, y traducción entre alemán, inglés y español.',
     channelsLabel: 'Idioma de la web',
@@ -96,7 +98,9 @@ export const languages = {
   en: {
     path: 'en/',
     root: '../',
-    title: 'Miriam Rivero · Conference interpreter and translator · German, English, Spanish',
+    title: 'Miriam Rivero · Conference interpreter and translator',
+    jobTitle: 'Conference interpreter and translator',
+    ogLocale: 'en_GB',
     description:
       'Conference interpreter and translator based in Madrid, German native speaker. Simultaneous, consecutive and liaison interpreting, and translation between German, English and Spanish.',
     channelsLabel: 'Site language',
@@ -183,7 +187,9 @@ export const languages = {
   de: {
     path: 'de/',
     root: '../',
-    title: 'Miriam Rivero · Konferenzdolmetscherin und Übersetzerin · Deutsch, Englisch, Spanisch',
+    title: 'Miriam Rivero · Konferenzdolmetscherin und Übersetzerin',
+    jobTitle: 'Konferenzdolmetscherin und Übersetzerin',
+    ogLocale: 'de_DE',
     description:
       'Konferenzdolmetscherin und Übersetzerin mit Muttersprache Deutsch in Madrid. Simultan-, Konsekutiv- und Verhandlungsdolmetschen sowie Übersetzungen zwischen Deutsch, Englisch und Spanisch.',
     channelsLabel: 'Sprache der Website',
