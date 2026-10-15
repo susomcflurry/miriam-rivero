@@ -1,5 +1,5 @@
-// All copy for the three language versions. Keys map to data-i18n attributes in src/template.html.
-// Values may contain inline HTML; they are trusted, authored here.
+// All copy for the three language versions, read by src/components/Site.jsx and src/site.js.
+// Only contactWhere carries inline HTML (<br>); it is trusted, authored here.
 
 const email = 'miriam.rivero98@gmail.com';
 const mail = (subject, body) =>
@@ -8,7 +8,6 @@ const mail = (subject, body) =>
 export const languages = {
   es: {
     path: '',
-    root: './',
     title: 'Miriam Rivero · Intérprete de conferencias y traductora',
     jobTitle: 'Intérprete de conferencias y traductora',
     ogLocale: 'es_ES',
@@ -101,7 +100,6 @@ export const languages = {
 
   en: {
     path: 'en/',
-    root: '../',
     title: 'Miriam Rivero · Conference interpreter and translator',
     jobTitle: 'Conference interpreter and translator',
     ogLocale: 'en_GB',
@@ -193,7 +191,6 @@ export const languages = {
 
   de: {
     path: 'de/',
-    root: '../',
     title: 'Miriam Rivero · Konferenzdolmetscherin und Übersetzerin',
     jobTitle: 'Konferenzdolmetscherin und Übersetzerin',
     ogLocale: 'de_DE',

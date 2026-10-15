@@ -22,8 +22,8 @@
   --step-head: clamp(2rem, 1.2rem + 2.6vw, 3.5rem);
   --step-display: clamp(3rem, 8.2vw, 9rem);
 
-  --display: 'Young Serif', Georgia, 'Times New Roman', serif;
-  --text: 'Source Serif 4', Georgia, 'Times New Roman', serif;
+  --display: var(--font-display), Georgia, 'Times New Roman', serif;
+  --text: var(--font-text), Georgia, 'Times New Roman', serif;
 
   /* Space */
   --margin: clamp(20px, 2.2vw, 32px);

@@ -1,10 +1,17 @@
-# Serves the static site with nginx. Build the HTML first: node src/build.mjs
+# Build the static Next.js export, then serve it with nginx.
+FROM node:22-alpine AS build
+WORKDIR /app
+ENV NEXT_TELEMETRY_DISABLED=1
+COPY package.json package-lock.json ./
+RUN npm ci
+COPY next.config.mjs ./
+COPY app ./app
+COPY src ./src
+COPY public ./public
+COPY assets/credits.json ./assets/credits.json
+RUN npx next build
+
 FROM nginx:1.27-alpine
-
 COPY nginx.conf /etc/nginx/conf.d/default.conf
-COPY index.html styles.css main.js i18n.json favicon.svg robots.txt sitemap.xml og-image.jpg /usr/share/nginx/html/
-COPY en/ /usr/share/nginx/html/en/
-COPY de/ /usr/share/nginx/html/de/
-COPY assets/img/ /usr/share/nginx/html/assets/img/
-
+COPY --from=build /app/out /usr/share/nginx/html
 EXPOSE 80

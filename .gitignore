@@ -3,3 +3,6 @@
 .impeccable/live/
 .vercel
 .env*
+node_modules/
+.next/
+out/
