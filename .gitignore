@@ -1,3 +1,5 @@
 .DS_Store
 .taste-skill/
 .impeccable/live/
+.vercel
+.env*

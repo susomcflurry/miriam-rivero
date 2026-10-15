@@ -1,0 +1,9 @@
+assets/*.jpg
+assets/credits.json
+src
+.impeccable
+Dockerfile
+compose.yaml
+nginx.conf
+.dockerignore
+*.md
