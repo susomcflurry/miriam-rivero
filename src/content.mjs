@@ -272,5 +272,5 @@ export const shared = {
   email,
   linkedin: 'https://www.linkedin.com/in/miriam-rivero-419265368/',
   linkedinShort: '/in/miriam-rivero',
-  siteUrl: 'https://example.com/', // TODO: replace with the real domain once bought
+  siteUrl: 'https://miriamrivero.com/',
 };

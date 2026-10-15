@@ -42,7 +42,7 @@ She is a **native German speaker based in Madrid** with a **Master's in Conferen
 - Contact:
   - Email: `miriam.rivero98@gmail.com`
   - LinkedIn: https://www.linkedin.com/in/miriam-rivero-419265368/
-- Not yet decided: pricing, which is not published (enquiry or quote only), the domain name and the hosting provider.
+- Not yet decided: pricing, which is not published (enquiry or quote only). The domain is miriamrivero.com (registered at IONOS) and the site is hosted on Vercel, deployed from GitHub main.
 
 ## Brand Commitments
 
