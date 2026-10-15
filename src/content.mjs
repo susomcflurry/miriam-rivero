@@ -278,5 +278,5 @@ export const shared = {
   email,
   linkedin: 'https://www.linkedin.com/in/miriam-rivero-419265368/',
   linkedinShort: '/in/miriam-rivero',
-  siteUrl: 'https://miriamrivero.com/',
+  siteUrl: 'https://www.miriamrivero.com/', // TEMP: back to https://miriamrivero.com/ once IONOS serves the apex A records
 };

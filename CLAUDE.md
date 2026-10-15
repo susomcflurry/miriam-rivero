@@ -26,7 +26,7 @@ There are no tests. Run the build after every change to `src/`, and commit the g
   - With JS, they fetch `i18n.json` and rewrite every element marked with `data-i18n` (text), `data-i18n-html`, `data-i18n-list`, `data-i18n-attr="attr:key"` or `data-i18n-href`. Then they `pushState` to that language's URL.
   - Before the URL changes, all `img` `src` values are pinned to absolute URLs, because relative paths would otherwise break once the URL's directory changes.
   - **Any new translatable element needs both the `{{key}}` placeholder and the matching `data-i18n*` attribute**, and the key must exist in all three languages. The build throws if a key is missing.
-- **Relative paths everywhere** (`{{root}}`) so the site works from a domain root or a subpath (for example GitHub Pages). `shared.siteUrl` in `content.mjs` (https://miriamrivero.com/, hosted on Vercel, DNS at IONOS) feeds the canonical, hreflang and og tags.
+- **Relative paths everywhere** (`{{root}}`) so the site works from a domain root or a subpath (for example GitHub Pages). `shared.siteUrl` in `content.mjs` (temporarily https://www.miriamrivero.com/ while IONOS keeps serving its parking IP for the apex; switch back to the apex and flip the Vercel domain redirect once fixed; hosted on Vercel, DNS at IONOS) feeds the canonical, hreflang and og tags.
 - **Layout ("split stage")**: a sticky photo stage on the left crossfades from Cologne to Madrid when `[data-stage-trigger]` scrolls up. Reveal animations only hide content when `html.js` is set. The type scale is exactly five steps (`--step-*` in `styles.css`), and the inspector fails pages that add more sizes.
 
 ## Images and credits

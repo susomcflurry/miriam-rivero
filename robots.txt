@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://miriamrivero.com/sitemap.xml
+Sitemap: https://www.miriamrivero.com/sitemap.xml
