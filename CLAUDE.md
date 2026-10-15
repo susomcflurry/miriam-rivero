@@ -34,7 +34,7 @@ There are no tests. Run the build after every change to `src/`, and commit the g
 - `assets/*.jpg` are the downloaded originals. `assets/img/*.webp` are the crops the page uses, made with `sips` and `cwebp`.
 - `assets/credits.json` records the source and licence of each photograph. The build turns it into the footer credit line, so remove an entry there if its photo stops being used.
 - Several photos are CC BY-SA, so their crops stay under the same licence.
-- The portrait `assets/img/miriam.webp` is a provisional 150px crop of a LinkedIn avatar and is pending a real photo.
+- The portrait `assets/img/miriam.webp` (480×600) is a retouched upscale of a 289px LinkedIn avatar (clean crop, denoise, Lanczos 3×, unsharp). Replace it with a real high-resolution photo when available.
 
 ## Design rules in force
 
