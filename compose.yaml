@@ -1,0 +1,8 @@
+services:
+  web:
+    build: .
+    image: miriam-rivero-web
+    container_name: miriam-rivero-web
+    ports:
+      - "8080:80"
+    restart: unless-stopped

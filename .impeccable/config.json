@@ -1,0 +1,17 @@
+{
+  "detector": {
+    "ignoreRules": [],
+    "ignoreFiles": [],
+    "ignoreValues": [
+      {
+        "rule": "flat-type-hierarchy",
+        "value": "*",
+        "files": [
+          "src/template.html"
+        ],
+        "createdAt": "2026-10-15T15:21:24.261Z",
+        "reason": "Claude: false positive, template has placeholders only; inspect.mjs measured rendered sizes 14/20/24/56/118px (display:body 5.9x)"
+      }
+    ]
+  }
+}

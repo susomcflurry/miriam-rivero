@@ -1,0 +1,189 @@
+<!doctype html>
+<html lang="{{lang}}" data-root="{{root}}">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>{{title}}</title>
+  <meta name="description" content="{{description}}">
+  <meta name="theme-color" content="#11151c">
+  <meta name="color-scheme" content="light">
+  <link rel="canonical" href="{{siteUrl}}{{path}}">
+  <link rel="alternate" hreflang="es" href="{{siteUrl}}">
+  <link rel="alternate" hreflang="en" href="{{siteUrl}}en/">
+  <link rel="alternate" hreflang="de" href="{{siteUrl}}de/">
+  <link rel="alternate" hreflang="x-default" href="{{siteUrl}}">
+  <meta property="og:title" content="{{title}}">
+  <meta property="og:description" content="{{description}}">
+  <meta property="og:image" content="{{siteUrl}}assets/img/stage-koln.webp">
+  <link rel="icon" href="{{root}}favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Young+Serif&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;1,8..60,400&display=swap" rel="stylesheet">
+  <link rel="preload" as="image" href="{{root}}assets/img/stage-koln.webp">
+  <link rel="stylesheet" href="{{root}}styles.css">
+  <script>document.documentElement.classList.add('js')</script>
+</head>
+<body>
+  <a class="skip" href="#main" data-i18n="skip">{{skip}}</a>
+
+  <div class="split">
+    <figure class="stage" aria-hidden="false">
+      <div class="stage__frame">
+        <img class="stage__img is-on" data-stage="koln" src="{{root}}assets/img/stage-koln.webp" width="1120" height="1400" alt="" fetchpriority="high">
+        <img class="stage__img" data-stage="madrid" src="{{root}}assets/img/stage-madrid.webp" width="1120" height="1400" alt="" loading="lazy">
+      </div>
+      <figcaption class="stage__caption">
+        <span class="is-on" data-stage="koln" data-i18n="stageKoln">{{stageKoln}}</span>
+        <span data-stage="madrid" data-i18n="stageMadrid">{{stageMadrid}}</span>
+      </figcaption>
+    </figure>
+
+    <div class="column">
+      <header class="hero" id="top">
+        <nav class="bar" aria-label="Menu">
+          <div class="channels" role="group" aria-label="{{channelsLabel}}" data-i18n-attr="aria-label:channelsLabel">
+            <a href="{{root}}" hreflang="es" lang="es" data-lang="es">ES</a>
+            <a href="{{root}}en/" hreflang="en" lang="en" data-lang="en">EN</a>
+            <a href="{{root}}de/" hreflang="de" lang="de" data-lang="de">DE</a>
+          </div>
+          <ul class="bar__links">
+            <li><a href="#services" data-i18n="navServices">{{navServices}}</a></li>
+            <li><a href="#work" data-i18n="navWork">{{navWork}}</a></li>
+            <li><a href="#about" data-i18n="navAbout">{{navAbout}}</a></li>
+          </ul>
+          <a class="button button--small" href="{{mailto}}" data-i18n-href="mailto" data-i18n="navAction">{{navAction}}</a>
+        </nav>
+
+        <p class="hero__line" data-reveal data-i18n="heroLine">{{heroLine}}</p>
+        <h1 class="wordmark"><span>Miriam Rivero</span></h1>
+      </header>
+
+      <main id="main">
+        <section class="intro" aria-label="Miriam Rivero" data-stage-trigger="madrid">
+          <div class="intro__text" data-reveal-group>
+            <p class="intro__lead" data-i18n="intro1">{{intro1}}</p>
+            <p data-i18n="intro2">{{intro2}}</p>
+            <p><span data-i18n="intro3">{{intro3}}</span> <a class="textlink" href="{{mailto}}" data-i18n-href="mailto" data-i18n="introLink">{{introLink}}</a></p>
+          </div>
+        </section>
+
+        <figure class="plate" aria-hidden="true">
+          <img src="{{root}}assets/img/plate-madrid.webp" width="1400" height="1050" alt="" loading="lazy">
+        </figure>
+
+        <section class="pairs" aria-labelledby="pairs-title">
+          <h2 class="sr-only" id="pairs-title" data-i18n="pairsTitle">{{pairsTitle}}</h2>
+          <ul class="pairs__list" data-reveal-group>
+            <li><span data-i18n="langDe">{{langDe}}</span> <svg class="pairs__arrow" viewBox="0 0 40 24" aria-hidden="true" focusable="false"><path d="M3 7h32m-7-5 7 5-7 5M37 17H5m7-5-7 5 7 5" fill="none" stroke="currentColor" stroke-width="3.2" stroke-linecap="square"/></svg><span class="sr-only">⇄</span> <span data-i18n="langEn">{{langEn}}</span></li>
+            <li><span data-i18n="langDe">{{langDe}}</span> <svg class="pairs__arrow" viewBox="0 0 40 24" aria-hidden="true" focusable="false"><path d="M3 7h32m-7-5 7 5-7 5M37 17H5m7-5-7 5 7 5" fill="none" stroke="currentColor" stroke-width="3.2" stroke-linecap="square"/></svg><span class="sr-only">⇄</span> <span data-i18n="langEs">{{langEs}}</span></li>
+            <li><span data-i18n="langEn">{{langEn}}</span> <svg class="pairs__arrow" viewBox="0 0 40 24" aria-hidden="true" focusable="false"><path d="M3 7h32m-7-5 7 5-7 5M37 17H5m7-5-7 5 7 5" fill="none" stroke="currentColor" stroke-width="3.2" stroke-linecap="square"/></svg><span class="sr-only">⇄</span> <span data-i18n="langEs">{{langEs}}</span></li>
+          </ul>
+          <p class="pairs__note" data-reveal data-i18n="pairsNote">{{pairsNote}}</p>
+        </section>
+      </main>
+    </div>
+  </div>
+
+  <section class="services" id="services" aria-labelledby="services-title">
+    <h2 class="services__title" id="services-title" data-i18n="servicesTitle">{{servicesTitle}}</h2>
+    <div class="services__blocks">
+      <article class="svc" data-reveal-group>
+        <h3 class="svc__title" data-i18n="svc1Title">{{svc1Title}}</h3>
+        <div class="svc__row">
+          <img class="svc__img" src="{{root}}assets/img/svc-conf.webp" width="675" height="900" alt="{{svc1Alt}}" data-i18n-attr="alt:svc1Alt" loading="lazy">
+          <ul class="svc__list" data-i18n-list="svc1List">{{list:svc1List}}</ul>
+        </div>
+      </article>
+      <article class="svc svc--flip" data-reveal-group>
+        <h3 class="svc__title" data-i18n="svc2Title">{{svc2Title}}</h3>
+        <div class="svc__row">
+          <img class="svc__img" src="{{root}}assets/img/svc-enlace.webp" width="675" height="900" alt="{{svc2Alt}}" data-i18n-attr="alt:svc2Alt" loading="lazy">
+          <ul class="svc__list" data-i18n-list="svc2List">{{list:svc2List}}</ul>
+        </div>
+      </article>
+      <article class="svc" data-reveal-group>
+        <h3 class="svc__title" data-i18n="svc3Title">{{svc3Title}}</h3>
+        <div class="svc__row">
+          <img class="svc__img" src="{{root}}assets/img/svc-trad.webp" width="675" height="900" alt="{{svc3Alt}}" data-i18n-attr="alt:svc3Alt" loading="lazy">
+          <ul class="svc__list" data-i18n-list="svc3List">{{list:svc3List}}</ul>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <section class="work" id="work" aria-labelledby="work-title">
+    <h2 class="work__title" id="work-title" data-reveal data-i18n="workTitle">{{workTitle}}</h2>
+    <div class="work__grid">
+      <ol class="work__list" data-reveal-group>
+        <li class="work__item is-active" data-work="1">
+          <img class="work__thumb" src="{{root}}assets/img/work-fisu.webp" width="1040" height="1300" alt="{{work1Alt}}" data-i18n-attr="alt:work1Alt" loading="lazy">
+          <button type="button" class="work__name" aria-pressed="true"><span data-i18n="work1Name">{{work1Name}}</span></button>
+          <span class="work__meta" data-i18n="work1Meta">{{work1Meta}}</span>
+        </li>
+        <li class="work__item" data-work="2">
+          <img class="work__thumb" src="{{root}}assets/img/work-madrid.webp" width="799" height="1000" alt="{{work2Alt}}" data-i18n-attr="alt:work2Alt" loading="lazy">
+          <button type="button" class="work__name" aria-pressed="false"><span data-i18n="work2Name">{{work2Name}}</span></button>
+          <span class="work__meta" data-i18n="work2Meta">{{work2Meta}}</span>
+        </li>
+        <li class="work__item" data-work="3">
+          <img class="work__thumb" src="{{root}}assets/img/work-koln.webp" width="1040" height="1300" alt="{{work3Alt}}" data-i18n-attr="alt:work3Alt" loading="lazy">
+          <button type="button" class="work__name" aria-pressed="false"><span data-i18n="work3Name">{{work3Name}}</span></button>
+          <span class="work__meta" data-i18n="work3Meta">{{work3Meta}}</span>
+        </li>
+      </ol>
+      <div class="work__frame" aria-hidden="true">
+        <img class="is-on" data-work="1" src="{{root}}assets/img/work-fisu.webp" width="1040" height="1300" alt="" loading="lazy">
+        <img data-work="2" src="{{root}}assets/img/work-madrid.webp" width="799" height="1000" alt="" loading="lazy">
+        <img data-work="3" src="{{root}}assets/img/work-koln.webp" width="1040" height="1300" alt="" loading="lazy">
+      </div>
+    </div>
+  </section>
+
+  <section class="about" id="about" aria-label="{{navAbout}}" data-i18n-attr="aria-label:navAbout">
+    <div class="letter" data-reveal-group>
+      <img class="letter__portrait" src="{{root}}assets/img/miriam.webp" width="150" height="170" alt="{{portraitAlt}}" data-i18n-attr="alt:portraitAlt">
+      <p data-i18n="about1">{{about1}}</p>
+      <p data-i18n="about2">{{about2}}</p>
+      <p data-i18n="about3">{{about3}}</p>
+      <p class="letter__sign">Miriam Rivero<span data-i18n="aboutRole">{{aboutRole}}</span></p>
+    </div>
+  </section>
+
+  <section class="contact" id="contact" aria-labelledby="contact-title">
+    <img class="contact__img" src="{{root}}assets/img/contact.webp" width="1920" height="1440" alt="{{contactAlt}}" data-i18n-attr="alt:contactAlt" loading="lazy">
+    <div class="card" data-reveal>
+      <h2 class="card__title" id="contact-title" data-i18n="contactTitle">{{contactTitle}}</h2>
+      <p class="card__where" data-i18n-html="contactWhere">{{contactWhere}}</p>
+      <dl class="card__rows">
+        <div><dt data-i18n="contactEmail">{{contactEmail}}</dt><dd><a href="mailto:{{email}}">{{email}}</a></dd></div>
+        <div><dt data-i18n="contactLinkedin">{{contactLinkedin}}</dt><dd><a href="{{linkedin}}" rel="noopener">{{linkedinShort}}</a></dd></div>
+        <div><dt data-i18n="contactLangs">{{contactLangs}}</dt><dd>DE · EN · ES</dd></div>
+      </dl>
+      <a class="button card__button" href="{{mailto}}" data-i18n-href="mailto" data-i18n="contactButton">{{contactButton}}</a>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <img class="footer__img" src="{{root}}assets/img/footer.webp" width="1200" height="982" alt="{{footerAlt}}" data-i18n-attr="alt:footerAlt" loading="lazy">
+    <div class="footer__side">
+      <p class="footer__mark">Miriam Rivero</p>
+      <ul class="footer__menu">
+        <li><a href="#services" data-i18n="navServices">{{navServices}}</a></li>
+        <li><a href="#work" data-i18n="navWork">{{navWork}}</a></li>
+        <li><a href="#about" data-i18n="navAbout">{{navAbout}}</a></li>
+        <li><a href="#contact" data-i18n="footerContact">{{footerContact}}</a></li>
+      </ul>
+      <div class="footer__blocks">
+        <a href="mailto:{{email}}">{{email}}</a>
+        <a href="{{linkedin}}" rel="noopener">LinkedIn</a>
+      </div>
+      <div class="footer__legal">
+        <p data-i18n="legal">{{legal}}</p>
+        <p class="credits"><span data-i18n="creditsLabel">{{creditsLabel}}</span>: {{credits}}</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="{{root}}main.js" defer></script>
+</body>
+</html>
