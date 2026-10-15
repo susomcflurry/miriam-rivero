@@ -267,7 +267,7 @@ export const languages = {
       'Jeden Auftrag bereite ich gründlich vor: Glossar, Eigennamen und Tagesordnung sind vor mir in der Kabine.',
     aboutRole: 'Konferenzdolmetscherin · DE · EN · ES',
     portraitAlt: 'Porträt von Miriam Rivero',
-    contactTitle: 'Sprechen wir',
+    contactTitle: 'Kontakt',
     contactWhere: 'Madrid<br>Vor Ort und remote',
     contactEmail: 'E-Mail',
     contactLinkedin: 'LinkedIn',
