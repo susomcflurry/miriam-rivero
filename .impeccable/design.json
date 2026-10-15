@@ -1,0 +1,352 @@
+{
+  "schemaVersion": 2,
+  "generatedAt": "2026-10-15T15:30:26+00:00",
+  "title": "Design System: Miriam Rivero",
+  "extensions": {
+    "colorMeta": {
+      "night": {
+        "role": "neutral",
+        "displayName": "Rhine Night",
+        "canonical": "#11151c",
+        "tonalRamp": [
+          "#090b0f",
+          "#21252d",
+          "#3d424a",
+          "#5c616a",
+          "#7d838c",
+          "#a0a5af",
+          "#c4c9d4",
+          "#ebeff5"
+        ]
+      },
+      "night-ink": {
+        "role": "neutral",
+        "displayName": "Bridge-Light White",
+        "canonical": "#e8e8e5",
+        "tonalRamp": [
+          "#0b0b0a",
+          "#252523",
+          "#424240",
+          "#61615f",
+          "#828280",
+          "#a5a5a2",
+          "#c9c9c6",
+          "#eeeeed"
+        ]
+      },
+      "night-muted": {
+        "role": "neutral",
+        "displayName": "River Haze",
+        "canonical": "#b5b4b0",
+        "tonalRamp": [
+          "#0c0b0a",
+          "#262522",
+          "#43423f",
+          "#62615e",
+          "#83827e",
+          "#a6a5a1",
+          "#cac9c5",
+          "#efeeec"
+        ]
+      },
+      "amber": {
+        "role": "primary",
+        "displayName": "Sodium Amber",
+        "canonical": "#d0832f",
+        "tonalRamp": [
+          "#200000",
+          "#4d0400",
+          "#702a00",
+          "#944c00",
+          "#b96e0d",
+          "#df913f",
+          "#ffb566",
+          "#ffe4b7"
+        ]
+      },
+      "amber-press": {
+        "role": "primary",
+        "displayName": "Pressed Amber",
+        "canonical": "#b9722a",
+        "tonalRamp": [
+          "#1f0100",
+          "#4b0900",
+          "#6d2d00",
+          "#914d00",
+          "#b66f26",
+          "#dc924d",
+          "#ffb672",
+          "#ffe4bc"
+        ]
+      },
+      "amber-ink": {
+        "role": "primary",
+        "displayName": "Amber Ink",
+        "canonical": "#0e0e0e",
+        "tonalRamp": [
+          "#0b0b0b",
+          "#252525",
+          "#424242",
+          "#616161",
+          "#828282",
+          "#a5a5a5",
+          "#c9c9c9",
+          "#eeeeee"
+        ]
+      },
+      "stone": {
+        "role": "neutral",
+        "displayName": "Madrid Granite",
+        "canonical": "#bdbab3",
+        "tonalRamp": [
+          "#0c0b08",
+          "#27251f",
+          "#44423c",
+          "#64615b",
+          "#85827b",
+          "#a8a59e",
+          "#ccc9c2",
+          "#f0eeea"
+        ]
+      },
+      "stone-2": {
+        "role": "neutral",
+        "displayName": "Pale Granite",
+        "canonical": "#cdcac3",
+        "tonalRamp": [
+          "#0c0b08",
+          "#272520",
+          "#44423c",
+          "#64615b",
+          "#85827c",
+          "#a8a59e",
+          "#ccc9c2",
+          "#f0eeea"
+        ]
+      },
+      "paper": {
+        "role": "neutral",
+        "displayName": "Card Paper",
+        "canonical": "#e3e3e0",
+        "tonalRamp": [
+          "#0b0b0a",
+          "#252523",
+          "#424240",
+          "#61615f",
+          "#828280",
+          "#a5a5a2",
+          "#c9c9c6",
+          "#eeeeed"
+        ]
+      },
+      "ink": {
+        "role": "neutral",
+        "displayName": "Ink",
+        "canonical": "#0e0e0e",
+        "tonalRamp": [
+          "#0b0b0b",
+          "#252525",
+          "#424242",
+          "#616161",
+          "#828282",
+          "#a5a5a5",
+          "#c9c9c9",
+          "#eeeeee"
+        ]
+      },
+      "muted": {
+        "role": "neutral",
+        "displayName": "Graphite",
+        "canonical": "#3a3a3c",
+        "tonalRamp": [
+          "#0b0b0c",
+          "#252527",
+          "#424244",
+          "#616163",
+          "#828284",
+          "#a5a5a7",
+          "#c9c9cb",
+          "#eeeef0"
+        ]
+      }
+    },
+    "typographyMeta": {
+      "display": {
+        "displayName": "Display",
+        "purpose": "Wordmark and the services and experience band titles."
+      },
+      "headline": {
+        "displayName": "Headline",
+        "purpose": "Language pairs, experience names, footer name."
+      },
+      "title": {
+        "displayName": "Title",
+        "purpose": "Service titles and the visit-card title (Young Serif at the lead step)."
+      },
+      "lead": {
+        "displayName": "Lead",
+        "purpose": "Hero statement; italic letter signature (Source Serif 4 at the lead step)."
+      },
+      "body": {
+        "displayName": "Body",
+        "purpose": "Reading text, lists, footer menu; 600 for the intro lead and buttons."
+      },
+      "label": {
+        "displayName": "Label",
+        "purpose": "Top bar, channels, captions, meta, legal and credits."
+      }
+    },
+    "shadows": [],
+    "motion": [
+      {
+        "name": "ease-out",
+        "value": "cubic-bezier(0.22, 1, 0.36, 1)",
+        "purpose": "Reveals (opacity 700ms, rise 24px over 800ms, 75ms stagger), stage crossfade (900ms), button press (140ms), preview scale (600ms)."
+      },
+      {
+        "name": "stage-drift",
+        "value": "28s ease-in-out infinite alternate",
+        "purpose": "Slow scale-to-1.06 drift of the stage photographs."
+      },
+      {
+        "name": "channel-fade",
+        "value": "out 140ms, in 220ms, ease, 6ms stagger",
+        "purpose": "In-place language switch."
+      },
+      {
+        "name": "wordmark-settle",
+        "value": "scale 1 to 0.93 on view() exit",
+        "purpose": "Signature: the wordmark settles as the first screen leaves."
+      }
+    ],
+    "breakpoints": [
+      {
+        "name": "phone",
+        "value": "820px"
+      },
+      {
+        "name": "tablet",
+        "value": "1100px"
+      }
+    ]
+  },
+  "components": [
+    {
+      "name": "Primary Button",
+      "kind": "button",
+      "refersTo": "button-primary",
+      "description": "The one action: amber fill, ink text, square, 48px.",
+      "html": "<a class=\"ds-btn-primary\" href=\"#\">Escríbeme</a>",
+      "css": ".ds-btn-primary{display:inline-flex;align-items:center;justify-content:center;min-height:48px;padding:0 24px;background:var(--amber,#d0832f);color:var(--amber-ink,#0e0e0e);font-family:'Source Serif 4', Georgia, 'Times New Roman', serif;font-size:var(--step-body,1.125rem);font-weight:600;line-height:1;text-decoration:none;border-radius:0;transition:transform 140ms cubic-bezier(0.22,1,0.36,1),background-color 160ms ease}.ds-btn-primary:hover{background:#dc9244}.ds-btn-primary:active{transform:scale(0.97);background:var(--amber-press,#b9722a)}.ds-btn-primary:focus-visible{outline:2px solid currentColor;outline-offset:4px}"
+    },
+    {
+      "name": "Small Button",
+      "kind": "button",
+      "refersTo": "button-small",
+      "description": "Top-bar action at the label step, 40px.",
+      "html": "<a class=\"ds-btn-small\" href=\"#\">Escríbeme</a>",
+      "css": ".ds-btn-small{display:inline-flex;align-items:center;min-height:40px;padding:0 18px;background:#d0832f;color:#0e0e0e;font-family:'Source Serif 4', Georgia, 'Times New Roman', serif;font-size:0.875rem;font-weight:600;line-height:1;text-decoration:none;border-radius:0;transition:transform 140ms cubic-bezier(0.22,1,0.36,1),background-color 160ms ease}.ds-btn-small:hover{background:#dc9244}.ds-btn-small:active{transform:scale(0.97);background:#b9722a}.ds-btn-small:focus-visible{outline:2px solid currentColor;outline-offset:4px}"
+    },
+    {
+      "name": "Language Channels",
+      "kind": "nav",
+      "refersTo": "channel",
+      "description": "ES/EN/DE receiver switch; the active channel inverts.",
+      "html": "<div class=\"ds-channels\"><a href=\"#\" aria-current=\"true\">ES</a><a href=\"#\">EN</a><a href=\"#\">DE</a></div>",
+      "css": ".ds-channels{display:flex;gap:4px;padding:16px;background:#11151c;font-family:'Source Serif 4', Georgia, 'Times New Roman', serif;font-size:0.875rem}.ds-channels a{display:inline-flex;align-items:center;justify-content:center;min-width:44px;min-height:40px;padding:0 8px;text-decoration:none;color:#b5b4b0;transition:color 160ms ease,background-color 160ms ease}.ds-channels a:hover{color:#e8e8e5}.ds-channels a[aria-current=true]{color:#11151c;background:#e8e8e5}.ds-channels a:focus-visible{outline:2px solid currentColor;outline-offset:4px}"
+    },
+    {
+      "name": "Language Pairs",
+      "kind": "custom",
+      "refersTo": null,
+      "description": "Headline-step pair lines with the square-capped SVG two-way arrow.",
+      "html": "<ul class=\"ds-pairs\"><li>Alemán <svg class=\"ds-pairs-arrow\" viewBox=\"0 0 40 24\" aria-hidden=\"true\"><path d=\"M3 7h32m-7-5 7 5-7 5M37 17H5m7-5-7 5 7 5\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"3.2\" stroke-linecap=\"square\"/></svg> Inglés</li><li>Alemán <svg class=\"ds-pairs-arrow\" viewBox=\"0 0 40 24\" aria-hidden=\"true\"><path d=\"M3 7h32m-7-5 7 5-7 5M37 17H5m7-5-7 5 7 5\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"3.2\" stroke-linecap=\"square\"/></svg> Español</li><li>Inglés <svg class=\"ds-pairs-arrow\" viewBox=\"0 0 40 24\" aria-hidden=\"true\"><path d=\"M3 7h32m-7-5 7 5-7 5M37 17H5m7-5-7 5 7 5\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"3.2\" stroke-linecap=\"square\"/></svg> Español</li></ul>",
+      "css": ".ds-pairs{list-style:none;margin:0;padding:24px;display:grid;gap:0.18em;background:#11151c;color:#e8e8e5}.ds-pairs li{font-family:'Young Serif', Georgia, 'Times New Roman', serif;font-size:clamp(2rem,1.2rem + 2.6vw,3.5rem);line-height:1.05;letter-spacing:-0.02em}.ds-pairs-arrow{display:inline-block;width:0.72em;height:0.44em;margin:0 0.06em;vertical-align:0.12em}"
+    },
+    {
+      "name": "Experience List",
+      "kind": "custom",
+      "refersTo": null,
+      "description": "Big names as buttons on granite; graphite until active.",
+      "html": "<ol class=\"ds-work\"><li class=\"is-active\"><button type=\"button\">FISU World University Games</button><span>Essen, 2025</span></li><li><button type=\"button\">trafficdesign</button><span>Köln, 2024</span></li></ol>",
+      "css": ".ds-work{list-style:none;margin:0;padding:32px;background:#bdbab3;color:#0e0e0e}.ds-work li{display:grid;justify-items:start;padding-bottom:18px}.ds-work button{font:inherit;background:none;border:0;cursor:pointer;padding:10px 0;font-family:'Young Serif', Georgia, 'Times New Roman', serif;font-size:clamp(2rem,1.2rem + 2.6vw,3.5rem);line-height:1;letter-spacing:-0.02em;text-align:left;color:#3a3a3c;transition:color 200ms ease}.ds-work button:hover,.ds-work .is-active button{color:#0e0e0e}.ds-work button:focus-visible{outline:2px solid currentColor;outline-offset:4px}.ds-work span{font-family:'Source Serif 4', Georgia, 'Times New Roman', serif;font-size:0.875rem;color:#3a3a3c}.ds-work .is-active span{color:#0e0e0e}"
+    },
+    {
+      "name": "Visit Card",
+      "kind": "card",
+      "refersTo": "visit-card",
+      "description": "Paper card on a photograph, closing with a full-bleed amber button.",
+      "html": "<div class=\"ds-card\"><h2>Hablemos de tu evento</h2><p>En Madrid y en remoto.</p><dl><div><dt>Email</dt><dd>miriam.rivero98@gmail.com</dd></div><div><dt>Idiomas</dt><dd>DE · EN · ES</dd></div></dl><a class=\"ds-card-btn\" href=\"#\">Escríbeme</a></div>",
+      "css": ".ds-card{width:420px;max-width:100%;padding:32px 32px 0;background:#e3e3e0;color:#0e0e0e;border-radius:0;font-family:'Source Serif 4', Georgia, 'Times New Roman', serif;font-size:1.125rem;line-height:1.55}.ds-card h2{margin:0 0 16px;font-family:'Young Serif', Georgia, 'Times New Roman', serif;font-weight:400;font-size:1.375rem;line-height:1.15}.ds-card p{margin:0 0 24px}.ds-card dl{display:grid;gap:10px;margin:0 0 28px}.ds-card dl div{display:flex;justify-content:space-between;gap:16px}.ds-card dt{color:#3a3a3c}.ds-card dd{margin:0;text-align:right;font-variant-numeric:tabular-nums;overflow-wrap:anywhere}.ds-card-btn{display:flex;align-items:center;justify-content:center;width:calc(100% + 64px);margin:0 -32px;min-height:52px;background:#d0832f;color:#0e0e0e;font-weight:600;text-decoration:none}.ds-card-btn:hover{background:#dc9244}.ds-card-btn:active{background:#b9722a}.ds-card-btn:focus-visible{outline:2px solid currentColor;outline-offset:4px}"
+    },
+    {
+      "name": "Footer Menu",
+      "kind": "nav",
+      "refersTo": null,
+      "description": "Quiet menu on night; hovering dims siblings, the hovered link underlines.",
+      "html": "<ul class=\"ds-footmenu\"><li><a href=\"#\">Servicios</a></li><li><a href=\"#\">Experiencia</a></li><li><a href=\"#\">Sobre mí</a></li><li><a href=\"#\">Contacto</a></li></ul>",
+      "css": ".ds-footmenu{list-style:none;margin:0;padding:24px;display:flex;flex-wrap:wrap;gap:8px 28px;background:#11151c;color:#e8e8e5;font-family:'Source Serif 4', Georgia, 'Times New Roman', serif;font-size:1.125rem}.ds-footmenu a{text-decoration:none;text-underline-offset:0.2em;text-decoration-thickness:1px;color:inherit;transition:color 200ms ease}.ds-footmenu:hover a{color:#b5b4b0}.ds-footmenu a:hover{color:#e8e8e5;text-decoration:underline}.ds-footmenu a:focus-visible{outline:2px solid currentColor;outline-offset:4px}"
+    }
+  ],
+  "narrative": {
+    "northStar": "Between Two Rivers",
+    "overview": "**Creative North Star: \"Between Two Rivers\"**\n\nRivero means \"of the riverbank\", and the system is built from two banks: the Rhine at Cologne, where she trained, and the Manzanares in Madrid, where she works. The page is a night field lit by sodium amber, the colour of bridge lights and Zollverein steel, which gives way to the warm granite greys of Madrid as the story moves south. Real, credited photographs of both cities carry the atmosphere; type and flat colour planes do everything else.\n\nDensity is low and deliberate. A sticky photographic stage holds one half of the screen while a narrow reading column moves past it, then the page opens into full-width colour bands (amber, stone, pale stone, a paper card on a photograph, night again). Every plane is flat, every corner square, and nothing is outlined. The serif pairing reads as a printed programme or a visit card, not as a software UI.\n\nMotion is quiet and physical: content rises 24px into place once, the stage crossfades from Rhine to Manzanares, and the wordmark settles slightly as the first screen leaves. The signature interaction is the channel switch, which changes the language of the whole page in place, like tuning a receiver.",
+    "keyCharacteristics": [
+      "Two-river palette: night and amber (Cologne), stone and paper (Madrid).",
+      "Young Serif display over Source Serif 4 text; exactly five type sizes.",
+      "Square corners, no shadows, no outlines; depth comes from photographs and colour planes.",
+      "Full-bleed, credited city photography; one translucent scrim, under the stage caption only.",
+      "The name \"Miriam Rivero\" is always set with capitals, including the wordmark."
+    ],
+    "rules": [
+      {
+        "name": "The Two Banks Rule",
+        "body": "Night surfaces belong to Cologne and carry night-ink text; stone and paper surfaces belong to Madrid and carry ink text. A surface never mixes the two text sets.",
+        "section": "colors"
+      },
+      {
+        "name": "The One Fill Rule",
+        "body": "Amber is the only filled, saturated colour. If something is amber, it is either the primary action or the services band; nothing decorative is amber.",
+        "section": "colors"
+      },
+      {
+        "name": "The Five Steps Rule",
+        "body": "Every font-size is one of the five `--step-*` values. A new role reuses an existing step with a different face, weight or style; it never adds a sixth size.",
+        "section": "typography"
+      },
+      {
+        "name": "The Capital Name Rule",
+        "body": "\"Miriam Rivero\" is always written with capitals, everywhere, in every face and size. No lowercase or uppercase transforms are applied to the name.",
+        "section": "typography"
+      },
+      {
+        "name": "The Flat Plane Rule",
+        "body": "Surfaces never lift. If something needs to stand forward, place it on a photograph or a contrasting colour plane; do not add a shadow or a glow.",
+        "section": "elevation"
+      },
+      {
+        "name": "The Caption Scrim Exception",
+        "body": "The caption scrim is the only gradient. Text that sits on a photograph either sits on that scrim or on a solid plane.",
+        "section": "elevation"
+      }
+    ],
+    "dos": [
+      "**Do** keep every size on the five steps (small, body, lead, head, display).",
+      "**Do** use amber for the action and the services band only, always with ink text.",
+      "**Do** separate sections with full-width colour planes (night, amber, stone, pale granite, paper on photograph) and the section step, not lines.",
+      "**Do** use real, credited photographs of Cologne and Madrid, cropped to the role's fixed ratio, and add each one to the credits record.",
+      "**Do** put hover styles behind a fine-pointer hover query; touch gets press feedback (scale 0.97) instead.",
+      "**Do** write \"Miriam Rivero\" with capitals in every face and context.",
+      "**Do** keep link underlines (1px) and the 2px focus outline; they are affordances, not decoration."
+    ],
+    "donts": [
+      "**Don't** round any corner.",
+      "**Don't** add shadows, glows or gradients; the caption scrim is the one exception.",
+      "**Don't** draw divider lines, borders or outlined boxes around content.",
+      "**Don't** add small labels above headings (eyebrows or kickers), numbered markers (01/02/03), icon cards or card grids.",
+      "**Don't** use a monospace face; tabular figures in Source Serif 4 cover aligned numbers.",
+      "**Don't** use font glyphs or icon fonts for arrows or icons; draw them as square-capped SVG strokes in the current colour.",
+      "**Don't** set the name in lowercase or uppercase transforms."
+    ]
+  }
+}

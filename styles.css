@@ -12,6 +12,7 @@
   --muted: #3a3a3c;
   --amber: #d0832f;
   --amber-press: #b9722a;
+  --amber-hover: #dc9244;
   --amber-ink: #0e0e0e;
 
   /* Type: five steps */
@@ -100,7 +101,7 @@ button, .button, .channels a { user-select: none; -webkit-user-select: none; }
   object-fit: cover;
   opacity: 0;
   transition: opacity 900ms var(--ease-out);
-  animation: drift 28s ease-in-out infinite alternate;
+  animation: drift 28s var(--ease-in-out) infinite alternate;
 }
 .stage__img[data-stage="koln"] { object-position: 40% 50%; }
 .stage__img.is-on { opacity: 1; }
@@ -292,7 +293,7 @@ button, .button, .channels a { user-select: none; -webkit-user-select: none; }
   display: inline-block;
   font-size: var(--step-body);
   text-decoration: none;
-  transition: transform 220ms var(--ease-out), color 200ms ease;
+  transition: color 200ms ease;
 }
 .footer__blocks { display: flex; flex-wrap: wrap; gap: 12px 48px; margin-top: 40px; font-size: var(--step-body); }
 .footer__legal { margin-top: auto; padding-top: 64px; display: grid; gap: 8px; font-size: var(--step-small); color: var(--night-muted); }
@@ -301,7 +302,7 @@ button, .button, .channels a { user-select: none; -webkit-user-select: none; }
 /* ———————————————————— Hover, only where hover exists ———————————————————— */
 
 @media (hover: hover) and (pointer: fine) {
-  .button:hover { background: #dc9244; }
+  .button:hover { background: var(--amber-hover); }
   .channels a:hover { color: var(--night-ink); }
   .channels a[aria-current="true"]:hover { color: var(--night); }
   .bar__links a:hover, .textlink:hover { text-decoration: underline; }
@@ -426,6 +427,5 @@ button, .button, .channels a { user-select: none; -webkit-user-select: none; }
   .js [data-reveal],
   .js [data-reveal-group] > *,
   .js .svc[data-reveal-group] .svc__img { transform: none; transition: opacity 300ms ease; }
-  .footer__menu a { transition: color 200ms ease; }
   .work__frame img { transform: none; }
 }
