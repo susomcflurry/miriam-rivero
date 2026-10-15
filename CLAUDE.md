@@ -30,7 +30,7 @@ There are no tests.
   - New visible text must carry `data-t` so it fades with the switch.
 - **Imperative effects** live in the same component: the IntersectionObserver reveals (they add `is-in`), the stage crossfade, the dock visibility and the work preview. Reveals only hide content when `html.js` is set.
 - **Styles** are one global sheet, `app/styles.css`, with the "split stage" layout and exactly five type steps (`--step-*`). Font families come from the `--font-display` and `--font-text` variables that `next/font` sets.
-- **URLs**: `trailingSlash: true` gives `/en/` and `/de/`. `shared.siteUrl` is temporarily `https://www.miriamrivero.com/`; the apex `miriamrivero.com` 308-redirects to `www` in Vercel.
+- **URLs**: `trailingSlash: true` gives `/en/` and `/de/`. `shared.siteUrl` is `https://miriamrivero.com/`; `www.miriamrivero.com` 308-redirects to it in Vercel.
 
 ## Images and credits
 
