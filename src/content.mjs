@@ -25,8 +25,12 @@ export const languages = {
       'Hola Miriam,\n\nFecha:\nLugar:\nIdiomas:\nTipo de servicio:\n\n'
     ),
     heroLine: 'Intérprete de conferencias y traductora alemana en Madrid. Máster por la TH\u00a0Köln.',
-    stageKoln: 'Colonia. El Rin y el puente Hohenzollern.',
-    stageMadrid: 'Madrid. El Manzanares.',
+    // ES opens on Madrid and moves to Cologne; EN and DE open on Cologne
+    stage1: 'assets/img/stage-madrid.webp',
+    stage2: 'assets/img/stage-koln.webp',
+    stage1Caption: 'Madrid. El Manzanares.',
+    stage2Caption: 'Colonia. El Rin y el puente Hohenzollern.',
+    plate: 'assets/img/plate-koln.webp',
     intro1:
       'Interpreto entre alemán, inglés y español en congresos, reuniones y visitas de empresa, en sala o a distancia.',
     intro2:
@@ -114,8 +118,11 @@ export const languages = {
       'Hello Miriam,\n\nDate:\nPlace:\nLanguages:\nType of assignment:\n\n'
     ),
     heroLine: 'German conference interpreter and translator in Madrid. Master’s from TH\u00a0Köln.',
-    stageKoln: 'Cologne. The Rhine and the Hohenzollern Bridge.',
-    stageMadrid: 'Madrid. The Manzanares.',
+    stage1: 'assets/img/stage-koln.webp',
+    stage2: 'assets/img/stage-madrid.webp',
+    stage1Caption: 'Cologne. The Rhine and the Hohenzollern Bridge.',
+    stage2Caption: 'Madrid. The Manzanares.',
+    plate: 'assets/img/plate-madrid.webp',
     intro1:
       'I interpret between German, English and Spanish at conferences, meetings and company visits, on site or remotely.',
     intro2:
@@ -203,8 +210,11 @@ export const languages = {
       'Hallo Miriam,\n\nDatum:\nOrt:\nSprachen:\nArt des Auftrags:\n\n'
     ),
     heroLine: 'Deutsche Konferenzdolmetscherin und Übersetzerin in Madrid. Master der TH\u00a0Köln.',
-    stageKoln: 'Köln. Der Rhein und die Hohenzollernbrücke.',
-    stageMadrid: 'Madrid. Der Manzanares.',
+    stage1: 'assets/img/stage-koln.webp',
+    stage2: 'assets/img/stage-madrid.webp',
+    stage1Caption: 'Köln. Der Rhein und die Hohenzollernbrücke.',
+    stage2Caption: 'Madrid. Der Manzanares.',
+    plate: 'assets/img/plate-madrid.webp',
     intro1:
       'Ich dolmetsche zwischen Deutsch, Englisch und Spanisch bei Kongressen, Meetings und Firmenbesuchen, vor Ort oder remote.',
     intro2:

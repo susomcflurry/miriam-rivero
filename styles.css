@@ -104,7 +104,7 @@ button, .button, .channels a { user-select: none; -webkit-user-select: none; }
   transition: opacity 900ms var(--ease-out);
   animation: drift 28s var(--ease-in-out) infinite alternate;
 }
-.stage__img[data-stage="koln"] { object-position: 40% 50%; }
+.stage__img[src*="stage-koln"] { object-position: 40% 50%; }
 .stage__img.is-on { opacity: 1; }
 @keyframes drift {
   from { transform: scale(1); }

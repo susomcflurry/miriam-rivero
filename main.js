@@ -23,10 +23,10 @@
     revealables.forEach((el) => el.classList.add('is-in'));
   }
 
-  /* ——— Stage: from the Rhine to the Manzanares as the story moves to Madrid ——— */
+  /* ——— Stage: the first river gives way to the second as the story moves on ——— */
   const stageItems = document.querySelectorAll('[data-stage]');
   const trigger = document.querySelector('[data-stage-trigger]');
-  let stageNow = 'koln';
+  let stageNow = '1';
   const setStage = (name) => {
     if (name === stageNow) return;
     stageNow = name;
@@ -36,7 +36,7 @@
     let ticking = false;
     const check = () => {
       ticking = false;
-      setStage(trigger.getBoundingClientRect().top < innerHeight * 0.55 ? 'madrid' : 'koln');
+      setStage(trigger.getBoundingClientRect().top < innerHeight * 0.55 ? '2' : '1');
     };
     addEventListener('scroll', () => {
       if (!ticking) { ticking = true; requestAnimationFrame(check); }
@@ -119,6 +119,7 @@
       el.setAttribute(attr, copy[key]);
     });
     document.querySelectorAll('[data-i18n-href]').forEach((el) => { el.href = copy[el.dataset.i18nHref]; });
+    document.querySelectorAll('[data-i18n-src]').forEach((el) => { el.src = new URL(copy[el.dataset.i18nSrc], rootURL).href; });
     doc.lang = lang;
     document.title = copy.title;
     document.querySelector('meta[name="description"]').setAttribute('content', copy.description);
