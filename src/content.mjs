@@ -24,13 +24,13 @@ export const languages = {
       'Consulta de interpretación',
       'Hola Miriam,\n\nFecha:\nLugar:\nIdiomas:\nTipo de servicio:\n\n'
     ),
-    heroLine: 'Intérprete de conferencias y traductora alemana, en Madrid. Máster por la TH\u00a0Köln.',
+    heroLine: 'Intérprete de conferencias y traductora alemana en Madrid. Máster por la TH\u00a0Köln.',
     stageKoln: 'Colonia. El Rin y el puente Hohenzollern.',
     stageMadrid: 'Madrid. El Manzanares.',
     intro1:
-      'Soy Miriam Rivero, intérprete de conferencias con el alemán como lengua materna. Me formé en Colonia y trabajo desde Madrid.',
+      'Interpreto entre alemán, inglés y español en congresos, reuniones y visitas de empresa, en sala o a distancia.',
     intro2:
-      'Interpreto en simultánea y en consecutiva entre alemán, inglés y español, en sala o a distancia, y traduzco textos para que suenen como si se hubieran escrito en el idioma de destino.',
+      'También traduzco y adapto textos para que suenen como si se hubieran escrito en el idioma de destino.',
     intro3:
       '¿Organizas un congreso, una visita de empresa o una reunión entre equipos de Alemania y España? Cuéntame fecha, lugar e idiomas y te respondo con una propuesta.',
     introLink: 'Escríbeme',
@@ -65,7 +65,7 @@ export const languages = {
     ],
     svc3Alt: 'El Palacio Real y la Almudena sobre el Manzanares, en Madrid',
     workTitle: 'Experiencia',
-    work1Name: 'FISU Games Rhine-Ruhr',
+    work1Name: 'FISU Games Rhine\u2011Ruhr',
     work1Meta: 'Simultánea DE → EN con streaming · Essen, 2025',
     work1Alt: 'Castillete de Zollverein, en Essen, sede de la región Rhine-Ruhr',
     work2Name: 'Justalia',
@@ -117,9 +117,9 @@ export const languages = {
     stageKoln: 'Cologne. The Rhine and the Hohenzollern Bridge.',
     stageMadrid: 'Madrid. The Manzanares.',
     intro1:
-      'I’m Miriam Rivero, a conference interpreter whose mother tongue is German. I trained in Cologne and work from Madrid.',
+      'I interpret between German, English and Spanish at conferences, meetings and company visits, on site or remotely.',
     intro2:
-      'I interpret simultaneously and consecutively between German, English and Spanish, on site or remotely, and I translate texts so they read as if they were written in the target language.',
+      'I also translate and adapt texts so they read as if they were written in the target language.',
     intro3:
       'Planning a conference, a company visit or a meeting between teams from Germany and Spain? Tell me the date, place and languages and I’ll come back with a proposal.',
     introLink: 'Get in touch',
@@ -154,7 +154,7 @@ export const languages = {
     ],
     svc3Alt: 'The Royal Palace and the Almudena above the Manzanares in Madrid',
     workTitle: 'Experience',
-    work1Name: 'FISU Games Rhine-Ruhr',
+    work1Name: 'FISU Games Rhine\u2011Ruhr',
     work1Meta: 'Simultaneous DE → EN with streaming · Essen, 2025',
     work1Alt: 'The Zollverein headframe in Essen, in the Rhine-Ruhr region',
     work2Name: 'Justalia',
@@ -206,9 +206,9 @@ export const languages = {
     stageKoln: 'Köln. Der Rhein und die Hohenzollernbrücke.',
     stageMadrid: 'Madrid. Der Manzanares.',
     intro1:
-      'Ich bin Miriam Rivero, Konferenzdolmetscherin mit Deutsch als Muttersprache. Ausgebildet in Köln, heute in Madrid zu Hause.',
+      'Ich dolmetsche zwischen Deutsch, Englisch und Spanisch bei Kongressen, Meetings und Firmenbesuchen, vor Ort oder remote.',
     intro2:
-      'Ich dolmetsche simultan und konsekutiv zwischen Deutsch, Englisch und Spanisch, vor Ort oder remote, und übersetze Texte so, dass sie klingen, als wären sie in der Zielsprache geschrieben.',
+      'Außerdem übersetze und adaptiere ich Texte so, dass sie klingen, als wären sie in der Zielsprache geschrieben.',
     intro3:
       'Sie planen einen Kongress, einen Firmenbesuch oder ein Meeting zwischen Teams aus Deutschland und Spanien? Nennen Sie mir Datum, Ort und Sprachen, und ich melde mich mit einem Angebot.',
     introLink: 'Anfrage senden',
@@ -243,7 +243,7 @@ export const languages = {
     ],
     svc3Alt: 'Der Königspalast und die Almudena über dem Manzanares in Madrid',
     workTitle: 'Erfahrung',
-    work1Name: 'FISU Games Rhine-Ruhr',
+    work1Name: 'FISU Games Rhine\u2011Ruhr',
     work1Meta: 'Simultan DE → EN mit Streaming · Essen, 2025',
     work1Alt: 'Das Fördergerüst der Zeche Zollverein in Essen, Region Rhein-Ruhr',
     work2Name: 'Justalia',

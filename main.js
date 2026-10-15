@@ -44,6 +44,28 @@
     check();
   }
 
+  /* ——— Dock: the action stays under the thumb from the services to the contact card ——— */
+  const dock = document.querySelector('.dock');
+  const services = document.querySelector('#services');
+  const contact = document.querySelector('#contact');
+  if (dock && services && contact) {
+    let queued = false;
+    const update = () => {
+      queued = false;
+      const reached = services.getBoundingClientRect().top < innerHeight * 0.6;
+      const atContact = contact.getBoundingClientRect().top < innerHeight;
+      const show = reached && !atContact;
+      if (show === dock.classList.contains('is-shown')) return;
+      dock.classList.toggle('is-shown', show);
+      dock.setAttribute('aria-hidden', String(!show));
+      dock.tabIndex = show ? 0 : -1;
+    };
+    addEventListener('scroll', () => {
+      if (!queued) { queued = true; requestAnimationFrame(update); }
+    }, { passive: true });
+    update();
+  }
+
   /* ——— Work: the name under the hand shows its place ——— */
   const items = document.querySelectorAll('.work__item');
   const frames = document.querySelectorAll('.work__frame img');
