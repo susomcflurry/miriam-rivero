@@ -1,0 +1,37 @@
+{
+  "$schema": "https://openapi.vercel.sh/vercel.json",
+  "redirects": [
+    {
+      "source": "/",
+      "has": [{ "type": "cookie", "key": "lang", "value": "de" }],
+      "destination": "/de/",
+      "permanent": false
+    },
+    {
+      "source": "/",
+      "has": [{ "type": "cookie", "key": "lang", "value": "en" }],
+      "destination": "/en/",
+      "permanent": false
+    },
+    {
+      "source": "/",
+      "missing": [
+        { "type": "cookie", "key": "lang" },
+        { "type": "header", "key": "user-agent", "value": ".*([Bb]ot|[Cc]rawl|[Ss]pider|[Ss]lurp|facebookexternalhit|WhatsApp|Lighthouse|Google-InspectionTool|vercel-screenshot).*" }
+      ],
+      "has": [{ "type": "header", "key": "x-vercel-ip-country", "value": "DE" }],
+      "destination": "/de/",
+      "permanent": false
+    },
+    {
+      "source": "/",
+      "missing": [
+        { "type": "cookie", "key": "lang" },
+        { "type": "header", "key": "user-agent", "value": ".*([Bb]ot|[Cc]rawl|[Ss]pider|[Ss]lurp|facebookexternalhit|WhatsApp|Lighthouse|Google-InspectionTool|vercel-screenshot).*" }
+      ],
+      "has": [{ "type": "header", "key": "x-vercel-ip-country", "value": "^(?!(?:ES|DE)$)[A-Z]{2}$" }],
+      "destination": "/en/",
+      "permanent": false
+    }
+  ]
+}

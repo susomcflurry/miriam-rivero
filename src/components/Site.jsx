@@ -105,6 +105,8 @@ export default function Site({ initialLang, creditsHtml }) {
     if (event.metaKey || event.ctrlKey || event.shiftKey || event.altKey) return;
     event.preventDefault();
     if (next === lang) return;
+    // An explicit choice outranks geolocation on later visits to "/" (see vercel.json)
+    document.cookie = `lang=${next}; path=/; max-age=31536000; SameSite=Lax; Secure`;
     const reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
     const nodes = root.current.querySelectorAll('[data-t]');
     const fade = (from, to, duration) =>
