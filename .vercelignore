@@ -1,9 +1,7 @@
-assets/*.jpg
-assets/credits.json
-src
+assets/originals
+.taste-skill
 .impeccable
 Dockerfile
 compose.yaml
 nginx.conf
 .dockerignore
-*.md
