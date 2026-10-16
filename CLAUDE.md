@@ -28,7 +28,7 @@ There are no tests.
   - The ES/EN/DE channel links are real `<a href>`, but a click fades every `[data-t]` node with WAAPI, swaps the language in place with `flushSync`, and calls `history.pushState`.
   - A `popstate` listener keeps back and forward in sync with the URL.
   - New visible text must carry `data-t` so it fades with the switch.
-- **Imperative effects** live in the same component: the IntersectionObserver reveals (they add `is-in`), the stage crossfade, the dock visibility and the work preview. Reveals only hide content when `html.js` is set.
+- **Imperative effects** live in the same component: the IntersectionObserver reveals (they add `is-in`), the stage crossfade, the floating menu's light or dark tone and the work preview. Reveals only hide content when `html.js` is set.
 - **Styles** are one global sheet, `app/styles.css`, with the "split stage" layout and exactly five type steps (`--step-*`). Font families come from the `--font-display` and `--font-text` variables that `next/font` sets.
 - **Language by country** is handled in `vercel.json`, not in the app, with 307 redirects on `/` only:
   - a `lang` cookie (set when the visitor picks a channel) wins;

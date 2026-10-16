@@ -4,6 +4,7 @@ import { useEffect, useRef, useState } from 'react';
 import { flushSync } from 'react-dom';
 import { languages, shared } from '../content.js';
 import { picture, SIZES } from '../images.js';
+import { liquidGlass } from '../glass.js';
 
 const PairArrow = () => (
   <>
@@ -33,7 +34,8 @@ export default function Site({ initialLang, creditsHtml }) {
   const [lang, setLang] = useState(initialLang);
   const [stage, setStage] = useState('1');
   const [work, setWork] = useState('1');
-  const [dock, setDock] = useState(false);
+  // The floating menu turns to dark text over the light bands, like iOS glass over a light page
+  const [barLight, setBarLight] = useState(false);
   // The second river is only fetched once the visitor starts scrolling, so it never competes with the first
   const [stage2Wanted, setStage2Wanted] = useState(false);
   const [canCopy, setCanCopy] = useState(false);
@@ -67,19 +69,22 @@ export default function Site({ initialLang, creditsHtml }) {
     return () => io.disconnect();
   }, []);
 
-  /* Stage swaps rivers as the intro arrives; the dock holds the action from services to contact */
+  /* Stage swaps rivers as the intro arrives; the menu reads the band beneath it */
   useEffect(() => {
     const trigger = root.current.querySelector('[data-stage-trigger]');
-    const services = root.current.querySelector('#services');
-    const contact = root.current.querySelector('#contact');
+    const lightBands = [...root.current.querySelectorAll('[data-tone="light"]')];
+    const bar = root.current.querySelector('.bar');
     let queued = false;
     const update = () => {
       queued = false;
       setStage(trigger.getBoundingClientRect().top < innerHeight * 0.55 ? '2' : '1');
       if (scrollY > 0) setStage2Wanted(true);
-      const reached = services.getBoundingClientRect().top < innerHeight * 0.6;
-      const atContact = contact.getBoundingClientRect().top < innerHeight;
-      setDock(reached && !atContact);
+      const { top, bottom } = bar.getBoundingClientRect();
+      const barY = (top + bottom) / 2;
+      setBarLight(lightBands.some((band) => {
+        const r = band.getBoundingClientRect();
+        return r.top <= barY && r.bottom >= barY;
+      }));
     };
     const onScroll = () => {
       if (!queued) {
@@ -110,6 +115,9 @@ export default function Site({ initialLang, creditsHtml }) {
     clearTimeout(copiedTimer.current);
     copiedTimer.current = setTimeout(() => setCopied(false), 2400);
   };
+
+  /* Glass surfaces bend the backdrop at their rim (Chromium; elsewhere the blur stays) */
+  useEffect(() => liquidGlass(root.current), []);
 
   /* Back and forward follow the URL's language */
   useEffect(() => {
@@ -182,10 +190,10 @@ export default function Site({ initialLang, creditsHtml }) {
             )}
           </div>
           <figcaption className="stage__caption">
-            <span className={stage === '1' ? 'is-on' : undefined} data-t>
+            <span className={stage === '1' ? 'is-on' : undefined} data-glass data-t>
               {copy.stage1Caption}
             </span>
-            <span className={stage === '2' ? 'is-on' : undefined} data-t>
+            <span className={stage === '2' ? 'is-on' : undefined} data-glass data-t>
               {copy.stage2Caption}
             </span>
           </figcaption>
@@ -193,7 +201,11 @@ export default function Site({ initialLang, creditsHtml }) {
 
         <div className="column">
           <header className="hero" id="top">
-            <nav className="bar" aria-label={copy.navLabel}>
+            <nav
+              className={`bar${barLight ? ' is-light' : ''}`}
+              aria-label={copy.navLabel}
+              data-glass
+            >
               <div className="channels" role="group" aria-label={copy.channelsLabel}>
                 {Object.entries(languages).map(([l, c]) => (
                   <a
@@ -204,6 +216,7 @@ export default function Site({ initialLang, creditsHtml }) {
                     lang={l}
                     aria-current={l === lang ? 'true' : 'false'}
                     onClick={(event) => switchTo(event, l)}
+                    data-glass
                   >
                     {l.toUpperCase()}
                   </a>
@@ -226,7 +239,7 @@ export default function Site({ initialLang, creditsHtml }) {
                   </a>
                 </li>
               </ul>
-              <a className="button button--small" href={copy.mailto} data-t>
+              <a className="button button--small" href={copy.mailto} data-glass data-t>
                 {copy.navAction}
               </a>
             </nav>
@@ -289,7 +302,7 @@ export default function Site({ initialLang, creditsHtml }) {
         </div>
       </div>
 
-      <section className="services" id="services" aria-labelledby="services-title">
+      <section className="services" id="services" aria-labelledby="services-title" data-tone="light">
         <h2 className="services__title" id="services-title" data-t>
           {copy.servicesTitle}
         </h2>
@@ -312,7 +325,7 @@ export default function Site({ initialLang, creditsHtml }) {
         </div>
       </section>
 
-      <section className="work" id="work" aria-labelledby="work-title">
+      <section className="work" id="work" aria-labelledby="work-title" data-tone="light">
         <h2 className="work__title" id="work-title" data-reveal data-t>
           {copy.workTitle}
         </h2>
@@ -344,7 +357,7 @@ export default function Site({ initialLang, creditsHtml }) {
         </div>
       </section>
 
-      <section className="about" id="about" aria-label={copy.navAbout}>
+      <section className="about" id="about" aria-label={copy.navAbout} data-tone="light">
         <div className="letter" data-reveal-group>
           <img
             className="letter__portrait"
@@ -370,7 +383,7 @@ export default function Site({ initialLang, creditsHtml }) {
           alt={copy.contactAlt}
           loading="lazy"
         />
-        <div className="card" data-reveal>
+        <div className="card" data-reveal data-glass>
           <h2 className="card__title" id="contact-title" data-t>
             {copy.contactTitle}
           </h2>
@@ -408,7 +421,7 @@ export default function Site({ initialLang, creditsHtml }) {
               <dd>DE · EN · ES</dd>
             </div>
           </dl>
-          <a className="button card__button" href={copy.mailto} data-t>
+          <a className="button card__button" href={copy.mailto} data-glass data-t>
             {copy.contactButton}
           </a>
         </div>
@@ -461,15 +474,6 @@ export default function Site({ initialLang, creditsHtml }) {
         </div>
       </footer>
 
-      <a
-        className={`dock button${dock ? ' is-shown' : ''}`}
-        href={copy.mailto}
-        aria-hidden={!dock}
-        tabIndex={dock ? 0 : -1}
-        data-t
-      >
-        {copy.navAction}
-      </a>
     </div>
   );
 }
